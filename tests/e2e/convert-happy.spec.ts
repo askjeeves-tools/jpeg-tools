@@ -1,12 +1,9 @@
-import { TOOL_MATRIX } from "@askjeeves/test-e2e/conversion-matrix";
-import { runToolMatrixCase } from "@askjeeves/test-e2e/tool-flow";
 import { test } from "@playwright/test";
+import { JPEG_CONVERSION_CASES, runJpegConversionCase } from "./helpers";
 
-const cases = TOOL_MATRIX["jpeg-tools"] ?? [];
-
-for (const testCase of cases) {
+for (const testCase of JPEG_CONVERSION_CASES) {
 	test(`converts ${testCase.id}`, async ({ page }) => {
 		await page.goto("/");
-		await runToolMatrixCase(page, testCase);
+		await runJpegConversionCase(page, testCase);
 	});
 }

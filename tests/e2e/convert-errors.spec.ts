@@ -1,11 +1,11 @@
 import { unlink, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { fixturePath } from "@askjeeves/test-e2e/fixtures";
+import { test } from "@playwright/test";
 import {
 	expectConvertPanelVisible,
 	expectToolStatusError,
-} from "@askjeeves/test-e2e/tool-flow";
-import { test } from "@playwright/test";
+	fixturePath,
+} from "./helpers";
 
 test("wrong format upload shows error", async ({ page }) => {
 	await page.goto("/");
@@ -42,4 +42,18 @@ test("batch compress with one file shows error", async ({ page }) => {
 	await page.getByRole("radio", { name: "Compress images (batch)" }).check();
 	await page.locator("#tool-convert-btn").click();
 	await expectToolStatusError(page, /at least 2 files/i);
+});
+
+test("invalid JPEG bytes show sniff error", async ({ page }) => {
+	const invalidPath = join(fixturePath(".."), "invalid-content.jpg");
+	await writeFile(invalidPath, "not a jpeg file");
+
+	try {
+		await page.goto("/");
+		await page.locator("#tool-file-input").setInputFiles(invalidPath);
+		await expectToolStatusError(page, /valid JPEG/i);
+		await expectConvertPanelVisible(page, false);
+	} finally {
+		await unlink(invalidPath).catch(() => {});
+	}
 });

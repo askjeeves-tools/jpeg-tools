@@ -1,0 +1,35 @@
+# Free Secure JPEG Converter — Ask Jeeves
+
+> Free, secure JPEG converter. Convert JPEG to PNG, WebP, PDF, or Base64 in your browser. Compress, crop, and batch process—files never leave your device.
+
+## Tool
+
+- [Free Secure JPEG Converter](https://jpeg.askjeeves.cc/): Convert JPEG to PNG, WebP, PDF, Base64; crop, compress, batch compress
+
+## Supported conversions
+
+- JPEG → PNG
+- JPEG → WebP
+- Convert to PDF
+- Convert to Base64
+- Crop image
+- Compress image
+- Compress images (batch)
+
+## FAQ
+
+- Is this JPEG converter free? Yes. Every conversion is free with no account, watermark, or usage limit.
+- Is this JPEG converter secure? Yes. Files are processed locally in your browser. Nothing is uploaded to a server, so your images stay on your device.
+- What formats can I convert JPEG to? You can convert JPEG to PNG, WebP, PDF, or Base64 text. You can also crop JPEGs, compress a single JPEG, or batch-compress multiple JPEGs into a ZIP file.
+- Can I compress or crop JPEG images? Yes. Use Compress image for one file, Compress images (batch) for multiple files, or Crop image with the interactive crop box on the preview.
+- Does the converter work on mobile? Yes. It runs in modern mobile browsers that support HTML5 and JavaScript. Very large files may be slower on mobile devices.
+- What is the maximum file size? Each file can be up to about 50 MB. If a file is too large, you will see a clear error message asking you to use a smaller file.
+- Why did my conversion fail? Common causes are a non-JPEG file, corrupted image data, exceeding the size limit, or choosing batch compress with only one file. Check the message below the converter for specific guidance, then try again or refresh the page.
+
+## Extended context
+
+- [Full site context](https://jpeg.askjeeves.cc/llms-full.txt): how-it-works, security, and per-conversion details
+
+## More tools
+
+- [Ask Jeeves](https://askjeeves.cc): Free file conversion tools (PDF, images, CSV/JSON/Excel, Word)
